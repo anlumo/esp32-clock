@@ -1,0 +1,17 @@
+menu "Clock Configuration"
+
+config WIFI_SSID
+    string "WiFi SSID"
+	default "myssid"
+	help
+		SSID (network name) for the WiFi Clock to connect to.
+
+config WIFI_PASSWORD
+    string "WiFi Password"
+	default "mypassword"
+	help
+		WiFi password (WPA or WPA2) for the WiFi Clock to use.
+
+		Can be left blank if the network has no security set.
+
+endmenu
