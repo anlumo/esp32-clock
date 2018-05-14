@@ -38,6 +38,7 @@ void myTask(void *pvParameters) {
 	struct tm timeinfo;
 	char strftime_buf[16];
 	oled.select_font(4);
+	oled.set_contrast(0);
 	while (1) {
 		time(&now);
 		localtime_r(&now, &timeinfo);

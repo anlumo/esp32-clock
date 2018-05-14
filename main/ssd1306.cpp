@@ -557,6 +557,11 @@ void OLED::fill_circle(int8_t x0, int8_t y0, uint8_t r, ssd1306_color_t color) {
 	}
 }
 
+void OLED::set_contrast(uint8_t contrast) {
+	command(address, 0x81); // SSD1306_SETCONTRAST
+	command(address, contrast);
+}
+
 void OLED::select_font(uint8_t idx) {
 	if (idx < NUM_FONTS)
 		font = fonts[idx];

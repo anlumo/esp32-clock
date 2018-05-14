@@ -146,6 +146,11 @@ public:
 	 */
 	void fill_circle(int8_t x0, int8_t y0, uint8_t r, ssd1306_color_t color);
 	/**
+	 * @brief   Set OLED contrast
+	 * @param   contrast  The contrast to set, from 0x00 to 0xff. Higher number means more contrast.
+	 */
+	void set_contrast(uint8_t contrast);
+	/**
 	 * @brief   Select font for drawing
 	 * @param   idx     Font index, see fonts.c
 	 */
