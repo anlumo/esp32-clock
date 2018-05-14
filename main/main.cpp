@@ -66,6 +66,11 @@ static void obtain_time(void)
     struct tm timeinfo = { 0 };
     int retry = 0;
     const int retry_count = 10;
+
+		oled.clear();
+		oled.draw_string(0, 0, "Waiting for", WHITE, BLACK);
+		oled.draw_string(0, oled.get_font_height(), "time...", WHITE, BLACK);
+		oled.refresh(true);
     while(timeinfo.tm_year < (2016 - 1900) && ++retry < retry_count) {
         ESP_LOGI(TAG, "Waiting for system time to be set... (%d/%d)", retry, retry_count);
         vTaskDelay(2000 / portTICK_PERIOD_MS);
